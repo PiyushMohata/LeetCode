@@ -10,6 +10,5 @@ public:
                 matrix[i][j]=v[matrix.size()-1-j][i];
             }
         }
-        v.clear();
     }
 };
