@@ -17,7 +17,7 @@ public:
         }
         if(count>=s.size())
             return true;
-
-        return false;
+        else
+            return false;
     }
 };
