@@ -20,21 +20,17 @@ public:
         // return false;
 
         int i=0,j=0;
-        int a=s.size(),b=t.size();
-
-        while(i<a && j<b)
-        {
-            if(s[i]==t[j])
-            {
+        int n = s.size();
+        int m = t.size();
+        while(i<n && j<m){
+            if(s[i] == t[j]){
                 i++,j++;
-            }
-            else
-            {
+            }else{
                 j++;
             }
         }
-        if(i==a)
-            return true;
+
+        if(i==n) return true;
         return false;
     }
 };
