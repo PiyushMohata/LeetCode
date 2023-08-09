@@ -5,13 +5,15 @@ public:
 
         for(int i=0; i<nums.size(); i++)
         {
+            // if(i!=0)
+            // {
+            //     for(int j=0; j<i; j++)
+            //     {
+            //         prefix+=nums[j];
+            //     }
+            // }
             if(i!=0)
-            {
-                for(int j=0; j<i; j++)
-                {
-                    prefix+=nums[j];
-                }
-            }
+                prefix+=nums[i-1];
 
             if(i!=nums.size()-1)
             {
@@ -24,7 +26,7 @@ public:
             if(prefix==postfix)
                 return i;
             
-            prefix=0,postfix=0;
+            postfix=0;
             
         }
         return -1;
