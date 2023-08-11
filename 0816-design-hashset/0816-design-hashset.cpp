@@ -2,6 +2,7 @@ class MyHashSet {
     vector<int>v;
 public:
     MyHashSet() {
+        v.clear();
     }
     
     void add(int key) {
@@ -17,8 +18,11 @@ public:
     void remove(int key) {
         for(int i=0; i<v.size(); i++)
         {
-            if(v[i]==key)
-                v.erase(v.begin()+i);
+            if (v[i] == key) {
+                v[i] = v.back(); 
+                v.pop_back();    
+                return;
+            }
         }
     }
     
