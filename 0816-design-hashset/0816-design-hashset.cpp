@@ -9,10 +9,9 @@ public:
         for(int i=0; i<v.size(); i++)
         {
             if(v[i]==key)
-                flag=1;
+                return;
         }
-        if(flag==0)
-            v.push_back(key);
+        v.push_back(key);
     }
     
     void remove(int key) {
