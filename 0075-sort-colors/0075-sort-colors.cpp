@@ -9,16 +9,16 @@ public:
             {
                 swap(nums[i],nums[left]);
                 left++;
-                i++;
             }
 
             else if(nums[i]==2)
             {
                 swap(nums[i],nums[right]);
                 right--;
+                i--;
             }
-            else
-                i++;
+            
+            i++;
         }
     }
 };
