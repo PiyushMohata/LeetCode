@@ -34,13 +34,13 @@ public:
                 ans+='0';
                 carry='1';
             }
-            else if(a[i]=='1' && b[i]=='1' && carry=='1')
+            else
             {
                 ans+='1';
                 carry='1';
             }
         }
-        
+
         reverse(ans.begin(),ans.end());
 
         if(carry=='1')
