@@ -1,7 +1,7 @@
 class Solution {
 public:
     int divisorSubstrings(int num, int k) {
-        int b=0,x,count=0;
+        int b=0,count=0;
         string s=to_string(num);
         if(s.size()==1)
             return 1;
@@ -9,7 +9,7 @@ public:
         {
             string str="";
             int a=0;
-            x=k;
+            int x=k;
             if(s.size()-b>=k)
             {
                 while(x--)
@@ -24,10 +24,8 @@ public:
                 break;
             }
             
-            cout<<str<<" ";
-            if(a!=0 && num%a==0 && str[str.size()-1]!='\0')
+            if(a!=0 && num%a==0)
             {
-                cout<<str<<" ";
                 count++;
             }
             b-=k-1;
