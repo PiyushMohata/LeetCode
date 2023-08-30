@@ -24,7 +24,7 @@ public:
                 break;
             }
             
-            if(a!=0 && num%a==0 && str[str.size()-1]!='\0')
+            if(a!=0 && num%a==0)
             {
                 count++;
             }
