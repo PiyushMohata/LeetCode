@@ -1,19 +1,14 @@
 class Solution {
 public:
     char findTheDifference(string s, string t) {
-        unordered_map<char,int>m;
+        sort(s.begin(),s.end());
+        sort(t.begin(),t.end());
+
         for(int i=0; i<s.size(); i++)
         {
-            m[s[i]]++;
-        }
-
-        for(int i=0; i<t.size(); i++)
-        {
-            if(m[t[i]]==0)
+            if(s[i] ^ t[i])
                 return t[i];
-            else
-                m[t[i]]--;
         }
-        return '0';
+        return t[t.size()-1];
     }
 };
