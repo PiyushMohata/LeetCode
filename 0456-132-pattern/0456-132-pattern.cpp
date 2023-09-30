@@ -10,7 +10,7 @@ public:
                 st.pop();
             }
 
-            if(!st.empty() && (nums[i] >st.top().second && st.top().first > st.top().second))
+            if(!st.empty() && (nums[i] >st.top().second && st.top().first > nums[i]))
                 return true;
 
             st.push({nums[i],x});
