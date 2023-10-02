@@ -3,19 +3,20 @@ public:
     bool checkInclusion(string s1, string s2) {
         if(s2.size()<s1.size())
             return false;
-        unordered_map<char,int>m,m1;
-        for(int i=0; i<s1.size(); i++)
-        {
-            m[s1[i]]++;
-        }
+        
+        vector<int>s1v(26,0);
+        for(auto c:s1)
+            s1v[c-'a']++;
+        
+        vector<int>s2v(26,0);
 
         int a=0,b=0;
         while(a<s2.size())
         {
-            m1[s2[a]]++;
+            s2v[s2[a]-'a']++;
             if(a-b+1==s1.size())
             {
-                if(areEqual(m,m1))
+                if(s1v==s2v)
                     return true;
             }
 
@@ -23,21 +24,11 @@ public:
                 a++;
             else
             {
-                m1[s2[b]]--;
+                s2v[s2[b]-'a']--;
                 a++;
                 b++;
             }
         }
         return false;
-    }
-
-    bool areEqual(unordered_map<char,int>m,unordered_map<char,int>m1)
-    {
-        for(auto x:m)
-        {
-            if(x.second!=m1[x.first])
-                return false;
-        }
-        return true;
     }
 };
