@@ -5,12 +5,13 @@ public:
         int count=0;
         for(int i=0; i<nums.size(); i++)
         {
-            m[nums[i]]++;
-        }
-
-        for(auto x:m)
-        {
-            count+=x.second*(x.second-1)/2;
+            if(m.find(nums[i])==m.end())
+                m[nums[i]]++;
+            else
+            {
+                count+=m[nums[i]];
+                m[nums[i]]++;
+            }
         }
         return count;
     }
