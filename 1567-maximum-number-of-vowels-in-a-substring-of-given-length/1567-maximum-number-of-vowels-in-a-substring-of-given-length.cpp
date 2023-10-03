@@ -2,19 +2,25 @@ class Solution {
 public:
     int maxVowels(string s, int k) {
         int a=0,b=0,count=0,res=0;
+        unordered_map<char,int>m;
+        m['a']++;
+        m['e']++;
+        m['i']++;
+        m['o']++;
+        m['u']++;
 
         while(b<s.size())
         {
             if(b-a==k)
             {
-                if(s[a]=='a' || s[a]=='e' || s[a]=='i' || s[a]=='o' || s[a]=='u')
+                if(m.find(s[a])!=m.end())
                 {
                     count--;
                 }
                 a++;
             }
 
-            if(s[b]=='a' || s[b]=='e' || s[b]=='i' || s[b]=='o' || s[b]=='u')
+            if(m.find(s[b])!=m.end())
             {
                 count++;
             }
