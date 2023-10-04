@@ -1,45 +1,21 @@
 class MyHashMap {
-    vector<vector<int>>v;
+    vector<int>v;
 public:
     MyHashMap() {
-        v.resize(1000000);
+        vector<int>v1(1000001,-1);
+        v=v1;
     }
     
     void put(int key, int value) {
-    int index = key % v.size();
-        
-        for (int j = 0; j < v[index].size(); j ++) {
-            if (v[index][j] == key) {
-                v[index][j + 1] = value;
-                return;
-            }
-        }
-        
-        v[index].push_back(key);
-        v[index].push_back(value);
+        v[key]=value;
     }
     
     int get(int key) {
-        int index = key % v.size();
-
-        for (int j = 0; j < v[index].size(); j ++) {
-            if (v[index][j] == key) {
-                return v[index][j + 1];
-            }
-        }
-
-        return -1;
+       return v[key];
     }
     
     void remove(int key) {
-       int index = key % v.size();
-
-        for (int j = 0; j < v[index].size(); j ++) {
-            if (v[index][j] == key) {
-                v[index].erase(v[index].begin() + j);
-                return;
-            }
-        }
+       v[key]=-1;
     }
 };
 
