@@ -1,6 +1,22 @@
 class Solution {
 public:
     int arrangeCoins(int n) {
-        return sqrt((long)2*n+0.25)-0.5;
+        int a=1,b=n,ans;
+        long long mid=a+(b-a)/2;
+        while(a<=b)
+        {
+            long long val=mid*(mid+1)/2;
+            if(val<=n)
+            {
+                ans=mid;
+                a=mid+1;
+            }
+            else if(val>n)
+            {
+                b=mid-1;
+            }
+            mid=a+(b-a)/2;
+        }
+        return ans;
     }
 };
