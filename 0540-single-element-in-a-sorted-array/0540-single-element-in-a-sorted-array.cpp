@@ -3,13 +3,6 @@ public:
     int singleNonDuplicate(vector<int>& nums) {
         int a=0,b=nums.size()-1;
 
-        if(nums.size()==1)
-            return nums[0];
-        if(nums[1]!=nums[0])
-            return nums[0];
-        else if(nums[nums.size()-1]!=nums[nums.size()-2])
-            return nums[nums.size()-1];
-
         while(a<=b)
         {
             int mid=a+(b-a)/2;
